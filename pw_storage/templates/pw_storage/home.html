@@ -1,0 +1,27 @@
+{% extends 'pw_storage/base.html' %}
+
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-danger" role="alert">
+  {% for message in messages %}
+     {{ message }}
+    {% endfor %}
+</div>
+<br>
+{% endif %}
+
+<div class="container-fluid">
+  <h1 class="display-3">Store your passwords here!</h1>
+  <br>
+  <ul class="list-group">
+    <li class="list-group-item active">Steps</li>
+    <li class="list-group-item">1.Register</li>
+    <li class="list-group-item">2.Choose title</li>
+    <li class="list-group-item">3.Set password title</li>
+    <li class="list-group-item">4.Save and find later</li>
+    <li class="list-group-item">5.Edit or Delete if wanted</li>
+  </ul>
+</div>
+
+{% endblock %}

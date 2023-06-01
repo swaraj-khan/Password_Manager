@@ -1,0 +1,33 @@
+{% extends 'pw_storage/base.html' %}
+
+{% block content %}
+
+{% if messages %}
+<div class="alert alert-primary" role="alert" >
+  {% for message in messages %}
+     {{ message }}
+    {% endfor %}
+</div>
+<br>
+{% endif %}
+
+
+<h1>Login</h1>
+
+<br>
+<br>
+<div class="form-group">
+<form method="POST" >
+  {% csrf_token %}
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+      <li class="{{ message.tags }}">{{ message }}</li>
+    {% endfor %}
+  </ul>
+{% endif %}
+{{ form.as_p }}
+<button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+{% endblock %}
